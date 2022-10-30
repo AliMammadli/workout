@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+*,
+*:after {
+    font-family: 'Orbitron', Helvetica, Arial, sans-serif !important;
+}
+
+body {
+    font-family: 'Orbitron', Helvetica, Arial, sans-serif;
+    /* background: red; */
+    background: lightgray;
+    margin: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+button {
+    cursor: pointer;
+}
+
+
+
+
+
+/* Custom */
+
+
+/* Light color schema */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --system-red:           #FF3B30;
+        --system-orange:        #FF9500;
+        --system-yellow:        #FFCC00;
+        --system-green:         #28CD41;
+        --system-mint:          #00C7BE;
+        --system-teal:          #59ADC4;
+        --system-cyan:          #55BEF0;
+        --system-blue:          #007AFF;
+        --system-indigo:        #5856D6;
+        --system-purple:        #AF52DE;
+        --system-pink:          #FF2D55;
+        --system-brown:         #A2845E;
+        --system-gray:          #8E8E93;
+  
+        --white:                #FFFFFF;
+        --black:                #000000;
+ 
+        --primary-background:   #FFFFFF;
+ 
+        --primary-label:        rgba(0, 0, 0, 0.85);
+        --secondary-label:      rgba(0, 0, 0, 0.50);
+        --tertiary-label:       rgba(0, 0, 0, 0.25);
+ 
+        --primary-fill:         rgba(0, 0, 0, 0.85);
+        --secondary-fill:       rgba(0, 0, 0, 0.50);
+        --tertiary-fill:        rgba(0, 0, 0, 0.25);
+        --quarternary-fill:     rgba(0, 0, 0, 0.10);
+        --quinary-fill:         rgba(0, 0, 0, 0.05);
+
+        --primary-tint:           var(--system-blue);
+    }
+}
+
+
+/* Dark color schema */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --system-red:           #FF453A;
+        --system-orange:        #FF9F0A;
+        --system-yellow:        #FFD60A;
+        --system-green:         #32D74B;
+        --system-mint:          #66D4CF;
+        --system-teal:          #6AC4DC;
+        --system-cyan:          #5AC8F5;
+        --system-blue:          #0A84FF;
+        --system-indigo:        #5E5CE6;
+        --system-purple:        #BF5AF2;
+        --system-pink:          #FF375F;
+        --system-brown:         #AC8E68;
+        --system-gray:          #98989D;
+ 
+        --white:                #FFFFFF;
+        --black:                #000000;
+ 
+        --primary-background:   #000000;
+ 
+        --primary-label:        rgba(255, 255, 255, 0.85);
+        --secondary-label:      rgba(255, 255, 255, 0.55);
+        --tertiary-label:       rgba(255, 255, 255, 0.25);
+ 
+        --primary-fill:         rgba(255, 255, 255, 0.85);
+        --secondary-fill:       rgba(255, 255, 255, 0.55);
+        --tertiary-fill:        rgba(255, 255, 255, 0.25);
+        --quarternary-fill:     rgba(255, 255, 255, 0.10);
+        --quinary-fill:         rgba(255, 255, 255, 0.05);
+
+        --primary-tint:           var(--system-blue);
+    }
+}
