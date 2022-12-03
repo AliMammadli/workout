@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import { useSnapshot } from "valtio"
 import { STFind } from "../stores/utils.store"
 

@@ -6,7 +6,7 @@ export const UIPlaylist = () => {
     const playlistSnap = useSnapshot(STPlaylist)
 
     const startAnim = () => {
-        STPlaylist.track = [...playlistSnap.list, { animName: 'anim_finish', url: { gltf: '/anims/anim_finish.gltf' } }, { animName: 'anim_rest', url: { gltf: '/anims/anim_rest.gltf' } }]
+        // STPlaylist.track = [...playlistSnap.list]
         STModel.activeModel = 'MDPerformer'
         STUI.activeUI = 'UITimer'
         STPlaylist.toggleAnim = !playlistSnap.toggleAnim
@@ -24,6 +24,10 @@ export const UIPlaylist = () => {
 
     const updateTiming = (type, action) => {
         STPlaylist[type] = +playlistSnap[type] + action
+    }
+
+    const changeExecType = (type) => {
+        STPlaylist.isRepBased = type === 'rep'
     }
 
     const sty = {
@@ -133,7 +137,7 @@ export const UIPlaylist = () => {
                                         {(provided) => (
                                             <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                                                 <div style={sty.listItem}>
-                                                    <img style={sty.listItemImage} src={move.url.gif} />
+                                                    <img style={sty.listItemImage} src={move.url.img} />
                                                     <h3 style={sty.listItemLabel}>{move.label}</h3>
                                                 </div>
                                             </div>
@@ -146,13 +150,43 @@ export const UIPlaylist = () => {
                     )}
                 </Droppable>
             </DragDropContext>
+
             <div style={sty.options}>
                 <div style={sty.option}>
+                    <label htmlFor='radio-one'>Rep-based</label>
+                    <input type='radio' id='radio-one' name='execType' value={playlistSnap.isRepBased} checked={playlistSnap.isRepBased} onChange={() => changeExecType('rep')} />
+                </div>
+                <div style={sty.option}>
+                    <label htmlFor='radio-two'>Time-based</label>
+                    <input type='radio' id='radio-two' name='execType' value={!playlistSnap.isRepBased} checked={!playlistSnap.isRepBased} onChange={() => changeExecType('time')} />
+                </div>
+            </div>
+
+            <div style={sty.options}>
+                {playlistSnap.isRepBased && <>
+                    <div style={sty.option}>
+                        <h4 style={sty.optionLabel}>Reps</h4>
+                        <div style={sty.optionDetail}>
+                            <div style={sty.optionButton} onClick={() => updateTiming('reps', -1)}>-</div>
+                            <h5 style={sty.optionInputLabel}>{playlistSnap.reps}</h5>
+                            <div style={sty.optionButton} onClick={() => updateTiming('reps', 1)}>+</div>
+                        </div>
+                    </div>
+                </>}
+                {!playlistSnap.isRepBased && <div style={sty.option}>
                     <h4 style={sty.optionLabel}>Train</h4>
                     <div style={sty.optionDetail}>
                         <div style={sty.optionButton} onClick={() => updateTiming('train', -5)}>-</div>
                         <h5 style={sty.optionInputLabel}>{playlistSnap.train}s</h5>
                         <div style={sty.optionButton} onClick={() => updateTiming('train', 5)}>+</div>
+                    </div>
+                </div>}
+                <div style={sty.option}>
+                    <h4 style={sty.optionLabel}>Sets</h4>
+                    <div style={sty.optionDetail}>
+                        <div style={sty.optionButton} onClick={() => updateTiming('sets', -1)}>-</div>
+                        <h5 style={sty.optionInputLabel}>{playlistSnap.sets}</h5>
+                        <div style={sty.optionButton} onClick={() => updateTiming('sets', 1)}>+</div>
                     </div>
                 </div>
                 <div style={sty.option}>
@@ -161,6 +195,14 @@ export const UIPlaylist = () => {
                         <div style={sty.optionButton} onClick={() => updateTiming('rest', -1)}>-</div>
                         <h5 style={sty.optionInputLabel}>{playlistSnap.rest}s</h5>
                         <div style={sty.optionButton} onClick={() => updateTiming('rest', 1)}>+</div>
+                    </div>
+                </div>
+                <div style={sty.option}>
+                    <h4 style={sty.optionLabel}>Set rest</h4>
+                    <div style={sty.optionDetail}>
+                        <div style={sty.optionButton} onClick={() => updateTiming('setRest', -1)}>-</div>
+                        <h5 style={sty.optionInputLabel}>{playlistSnap.setRest}s</h5>
+                        <div style={sty.optionButton} onClick={() => updateTiming('setRest', 1)}>+</div>
                     </div>
                 </div>
                 <div style={sty.option}>

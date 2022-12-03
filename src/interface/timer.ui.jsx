@@ -48,7 +48,7 @@ export const UITimer = () => {
             return setAnimLabels(temp)
         }
         
-        if (iteration === STPlaylist.track.length * 2 - 5) return hideTimer()
+        if (iteration === STPlaylist.track.length * 2 - 3) return hideTimer()
 
         gsap.fromTo(barRef.current, {
             width: '0%',

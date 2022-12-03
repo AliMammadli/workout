@@ -15,7 +15,6 @@ export function MDMuscle(props) {
     })
 
     const navUI = (muscle) => {
-        console.log(muscle)
         STModel.activeModel = 'MDCharacter'
         STUI.activeUI = 'UIAnimlist'
     }

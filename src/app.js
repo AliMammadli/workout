@@ -8,15 +8,15 @@ import { UI } from './interface/core.ui'
 
 
 const Light = () => {
-    // const posX = useControl('Pos X', { type: 'number', group: 'LIGHT', value: -1.2, min: -4, max: 4 })
-    // const posY = useControl('Pos Y', { type: 'number', group: 'LIGHT', value: 2.3, min: -4, max: 4 })
-    // const posZ = useControl('Pos Z', { type: 'number', group: 'LIGHT', value: -2.2, min: -4, max: 4 })
+    const posX = useControl('Pos X', { type: 'number', group: 'LIGHT', value: -1.2, min: -4, max: 4 })
+    const posY = useControl('Pos Y', { type: 'number', group: 'LIGHT', value: 2.3, min: -4, max: 4 })
+    const posZ = useControl('Pos Z', { type: 'number', group: 'LIGHT', value: -2.2, min: -4, max: 4 })
 
     return (
         <>
             <ambientLight intensity={0.5} />
             <directionalLight castShadow color={'white'} position={[-1.2, 2.3, 2.2]} intensity={1.5} shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-            <directionalLight color={'white'} position={[-1.2, 2.3, -2.2]} intensity={1.5} />
+            <directionalLight color={'white'} position={[posX, posY, posZ]} intensity={1.5} />
         </>
     )
 }
@@ -67,8 +67,8 @@ export default function App() {
                 </Controls.Canvas>
                 {/* <Stats /> */}
                 {/* <Controls /> */}
+                <UI />
             </Controls.Provider>
-            <UI />
         </>
     )
 }

@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react"
 import { useSnapshot } from "valtio"
 import { STUI, STPlaylist } from "../stores/utils.store"
 
 
 export const UIAnimlist = () => {
-    const [anims, setAnims] = useState([])
     const playlistSnap = useSnapshot(STPlaylist)
 
     const choose = (animIndex) => {
@@ -33,14 +31,13 @@ export const UIAnimlist = () => {
         list: {
             display: 'flex',
             flexWrap: 'wrap',
+            width: '45%',
             marginBottom: 30,
-            overflowY: 'scroll',
-            height: '62vh'
+            overflowY: 'scroll'
         },
         listItemBg: {
             display: 'flex',
-            flex: '0 1 20%',
-            alignItems: 'center',
+            flex: '0 1 10%',
             justifyContent: 'center',
             margin: 10,
             cursor: 'pointer',
@@ -48,7 +45,7 @@ export const UIAnimlist = () => {
         },
         listItem: {
             display: 'flex',
-            width: '100%',
+            padding: 10,
             flexDirection: 'column',
             alignItems: 'center',
             borderRadius: 10,
@@ -83,7 +80,7 @@ export const UIAnimlist = () => {
                     return (
                         <div style={{ ...sty.listItemBg, boxShadow: playlistSnap.chosen.indexOf(i) > -1 ? '0 0 0 5px var(--primary-tint) inset' : 'none' }} key={i}>
                             <div style={{ ...sty.listItem, transform: playlistSnap.chosen.indexOf(i) > -1 ? 'scale(0.85)' : 'scale(1)' }} onClick={() => choose(i)}>
-                                <img style={sty.listItemImage} src={anim.url.gif} />
+                                <img style={sty.listItemImage} src={anim.url.img} />
                                 <h3 style={sty.listItemLabel}>{anim.label}</h3>
                             </div>
                         </div>

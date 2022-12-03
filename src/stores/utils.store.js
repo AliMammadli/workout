@@ -1,6 +1,26 @@
 import { proxy } from "valtio"
 
 
+export const STApp = proxy({
+    debugMode: false,
+    debugModel: 'MDDebug',
+    debugUI: 'UIDebug'
+})
+
+
+export const STCharacter = proxy({
+    model: 'male_body',
+    gender: 'male',
+    anims: {
+        idle: 'idle_04',
+        rest: 'idle_01',
+        setIdle: 'idle_03',
+        warmUp: 'warm_up_01',
+        finish: 'victory_03'
+    }
+})
+
+
 export const STUI = proxy({
     prevUI: '',
     activeUI: 'UIMuscle'
@@ -20,51 +40,86 @@ export const STFind = proxy({
 
 export const STPlaylist = proxy({
     toggleAnim: false,
+    isRepBased: true,
+    reps: 5,
+    sets: 1,
     train: 10,
     rest: 4,
+    setRest: 15,
     countdown: 5,
+    crossFadeDuration: 0.5,
     track: [],
     list: [],
     chosen: [],
     animlist: [
         {
-            animName: 'anim_1',
-            label: 'Side streching',
+            animName: 'back_squat',
+            label: 'Back squat',
             url: {
-                gif: '/images/anim_1.gif',
-                gltf: '/anims/anim_1.gltf'
+                img: '/images/anim_preview_2.png'
             }
         },
         {
-            animName: 'anim_2',
-            label: 'Arm rising',
+            animName: 'burpee',
+            label: 'Burpee',
             url: {
-                gif: '/images/anim_2.gif',
-                gltf: '/anims/anim_2.gltf'
+                img: '/images/anim_preview_2.png'
             }
         },
         {
-            animName: 'anim_3',
-            label: 'Body rotation',
+            animName: 'jumping_jacks',
+            label: 'Jumping jacks',
             url: {
-                gif: '/images/anim_3.gif',
-                gltf: '/anims/anim_3.gltf'
+                img: '/images/anim_preview_2.png'
             }
         },
         {
-            animName: 'anim_4',
-            label: 'Overhead clap',
+            animName: 'kettlebell',
+            label: 'Kettlebell',
             url: {
-                gif: '/images/anim_4.gif',
-                gltf: '/anims/anim_4.gltf'
+                img: '/images/anim_preview_2.png'
             }
         },
         {
-            animName: 'anim_5',
-            label: 'Arm cross',
+            animName: 'overhead_squat',
+            label: 'Overhead squat',
             url: {
-                gif: '/images/anim_5.gif',
-                gltf: '/anims/anim_5.gltf'
+                img: '/images/anim_preview_2.png'
+            }
+        },
+        {
+            animName: 'pistol',
+            label: 'Pistol',
+            url: {
+                img: '/images/anim_preview_2.png'
+            }
+        },
+        {
+            animName: 'plank',
+            label: 'Plank',
+            url: {
+                img: '/images/anim_preview_2.png'
+            }
+        },
+        {
+            animName: 'push_up',
+            label: 'Push up',
+            url: {
+                img: '/images/anim_preview_2.png'
+            }
+        },
+        {
+            animName: 'sit_up',
+            label: 'Sit up',
+            url: {
+                img: '/images/anim_preview_2.png'
+            }
+        },
+        {
+            animName: 'snatch',
+            label: 'Snatch',
+            url: {
+                img: '/images/anim_preview_2.png'
             }
         }
     ]
