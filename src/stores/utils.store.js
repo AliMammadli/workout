@@ -4,7 +4,8 @@ import { proxy } from "valtio"
 export const STApp = proxy({
     debugMode: false,
     debugModel: 'MDDebug',
-    debugUI: 'UIDebug'
+    debugUI: 'UIDebug',
+    sceneName: 'SCRoom'
 })
 
 

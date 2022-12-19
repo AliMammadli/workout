@@ -14,7 +14,7 @@ export function MDMuscle(props) {
         onPointerEnter: ({ event }) => { if (event.object.name !== 'body') { event.object.material = materials.active; STFind.muscleMap = event.object.name } }
     })
 
-    const navUI = (muscle) => {
+    const navUI = () => {
         STModel.activeModel = 'MDCharacter'
         STUI.activeUI = 'UIAnimlist'
     }

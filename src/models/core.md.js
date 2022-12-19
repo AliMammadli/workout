@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { useSnapshot } from 'valtio'
 import { STModel, STApp } from '../stores/utils.store'
 
@@ -12,7 +13,11 @@ const ModelSwap = (props) => {
     const appSnap = useSnapshot(STApp)
     const activeModel = appSnap.debugMode ? appSnap.debugModel : modelSnap.activeModel
 
-    return props.children.filter(c => c.props.mdName === activeModel)
+    return (
+        <Suspense fallback={null}>
+            {props.children.filter(c => c.props.mdName === activeModel)}
+        </Suspense>
+    )
 }
 
 

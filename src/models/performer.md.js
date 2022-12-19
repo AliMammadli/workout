@@ -55,14 +55,14 @@ export function MDPerformer(props) {
 
     const fadeAnim = () => {
         ++iteration
-        console.log(iteration, track.at(iteration - 1), track[iteration], track.length, STPlaylist.list.length * 4 + 2)
+        // console.log(iteration, track.at(iteration - 1), track[iteration], track.length, STPlaylist.list.length * 4 + 2)
         if (track[iteration]) actions[track[iteration]].reset().play()
         if (track[iteration]) actions[track.at(iteration - 1)].crossFadeTo(actions[track[iteration]], STPlaylist.crossFadeDuration)
         startAnim()
     }
 
     const finishTrack = () => {
-        console.log(iteration, `${STCharacter.anims.setIdle}`, `${STCharacter.anims.finish}`)
+        // console.log(iteration, `${STCharacter.anims.setIdle}`, `${STCharacter.anims.finish}`)
         actions[`${STCharacter.anims.finish}`].reset().play()
         actions[`${STCharacter.anims.setIdle}`].crossFadeTo(actions[`${STCharacter.anims.finish}`], STPlaylist.crossFadeDuration)
         setTimeout(() => { STModel.activeModel = 'MDCharacter'; STUI.activeUI = 'UIPlaylist' }, (actions[`${STCharacter.anims.finish}`]?._clip.duration - STPlaylist.crossFadeDuration) * 1000)
