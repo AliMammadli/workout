@@ -9,7 +9,7 @@ import { Scene } from './scenes/core.sc'
 
 
 
-const App = () => {
+export const App = () => {
     return (
         <>
             <Controls.Provider>
@@ -25,5 +25,3 @@ const App = () => {
         </>
     )
 }
-
-export default App
