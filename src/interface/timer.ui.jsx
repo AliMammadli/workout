@@ -76,8 +76,8 @@ export const UITimer = () => {
             position: 'absolute',
             top: 0,
             left: 0,
-            height: '100vh',
-            width: '100vw',
+            // height: '100vh',
+            // width: '100vw',
             display: 'flex',
             flexDirection: 'column'
         },
@@ -97,10 +97,11 @@ export const UITimer = () => {
             marginLeft: 20
         },
         countdown: {
-            position: 'absolute',
+            position: 'fixed',
             height: 140,
             width: 140,
             top: 'calc(50% - 70px)',
+            left: 'calc(50% - 70px)',
             display: 'flex',
             alignSelf: 'center',
             alignItems: 'center',
@@ -115,7 +116,7 @@ export const UITimer = () => {
             display: 'flex',
             flexDirection: 'column',
             width: '100vw',
-            position: 'absolute',
+            position: 'fixed',
             bottom: 70,
             opacity: 0
         },

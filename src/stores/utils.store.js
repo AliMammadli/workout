@@ -3,9 +3,9 @@ import { proxy } from "valtio"
 
 export const STApp = proxy({
     debugMode: false,
-    debugModel: 'MDDebug',
+    debugModel: 'MDMuscle',
     debugUI: 'UIDebug',
-    sceneName: 'SCRoom'
+    sceneName: 'SCBox'
 })
 
 
@@ -47,7 +47,7 @@ export const STPlaylist = proxy({
     train: 10,
     rest: 4,
     setRest: 15,
-    countdown: 5,
+    countdown: 10,
     crossFadeDuration: 0.5,
     track: [],
     list: [],

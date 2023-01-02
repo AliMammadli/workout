@@ -4,6 +4,8 @@ import { STApp } from '../stores/utils.store'
 
 import { SCDemo } from './demo.sc'
 import { SCRoom } from './room.sc'
+import { SCGym } from './gym.sc'
+import { SCBox } from './box.sc'
 
 
 const SceneSwap = (props) => {
@@ -22,6 +24,8 @@ export const Scene = () => {
         <SceneSwap>
             <SCDemo scName={'SCDemo'} />
             <SCRoom scName={'SCRoom'} />
+            <SCGym scName={'SCGym'} />
+            <SCBox scName={'SCBox'} />
         </SceneSwap>
     )
 }
