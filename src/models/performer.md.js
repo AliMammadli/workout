@@ -100,12 +100,22 @@ export function MDPerformer(props) {
         <group ref={meshRef} {...props} dispose={null}>
             <group rotation={[Math.PI / 2, 0, 0]} scale={0.0015}>
                 <primitive object={nodes.mixamorigHips} />
-                <skinnedMesh castShadow name="Boxers" geometry={nodes.Boxers.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.Boxers.skeleton} />
-                <skinnedMesh castShadow name="CC_Base_Body" geometry={nodes.CC_Base_Body.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.CC_Base_Body.skeleton} />
-                <skinnedMesh castShadow name="CC_Base_Eye" geometry={nodes.CC_Base_Eye.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.CC_Base_Eye.skeleton} />
+
+                {STCharacter.gender === 'male' && <>
+                    <skinnedMesh castShadow name="Boxers" geometry={nodes.Boxers.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.Boxers.skeleton} />
+                    <skinnedMesh castShadow name="CC_Base_Body" geometry={nodes.CC_Base_Body.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.CC_Base_Body.skeleton} />
+                    <skinnedMesh castShadow name="CC_Base_Eye" geometry={nodes.CC_Base_Eye.geometry} material={materials['4_meshes_Merge']} skeleton={nodes.CC_Base_Eye.skeleton} />
+                </>}
+
+                {STCharacter.gender === 'female' && <>
+                    <skinnedMesh castShadow name="Bra" geometry={nodes.Bra.geometry} material={materials['5_meshes_Merge']} skeleton={nodes.Bra.skeleton} />
+                    <skinnedMesh castShadow name="CC_Base_Body" geometry={nodes.CC_Base_Body.geometry} material={materials['5_meshes_Merge']} skeleton={nodes.CC_Base_Body.skeleton} />
+                    <skinnedMesh castShadow name="CC_Base_Eye" geometry={nodes.CC_Base_Eye.geometry} material={materials['5_meshes_Merge']} skeleton={nodes.CC_Base_Eye.skeleton} />
+                    <skinnedMesh castShadow name="Underwear_Bottoms" geometry={nodes.Underwear_Bottoms.geometry} material={materials['5_meshes_Merge']} skeleton={nodes.Underwear_Bottoms.skeleton} />
+                </>}
             </group>
         </group>
     )
 }
 
-useGLTF.preload('/models/character.gltf')
+useGLTF.preload(`/models/${STCharacter.model}.gltf`)

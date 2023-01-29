@@ -20,8 +20,8 @@ body,
 
 body {
     font-family: 'Orbitron', Helvetica, Arial, sans-serif;
-    /* background: red; */
-    background: lightgray;
+    /* background: lightgray; */
+    background: black;
     margin: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

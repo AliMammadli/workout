@@ -1,10 +1,12 @@
 import { useRef, useEffect } from 'react'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { useControl } from 'react-three-gui'
 
 
 export const CamnCon = () => {
     const camera = useRef()
     const controls = useRef()
+
 
     useEffect(() => {
         if (!controls.current || !camera.current) return
@@ -12,6 +14,7 @@ export const CamnCon = () => {
         // camera.current.position.set(0, 3, 4)
         controls.current.target.set(0, 1, 0)
     }, [camera, controls])
+
 
     return (
         <>

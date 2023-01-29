@@ -18,8 +18,8 @@ export const App = () => {
                     <Model />
                     <Scene />
                 </Controls.Canvas>
-                {/* <Stats /> */}
-                {/* <Controls title='Settings' /> */}
+                <Stats />
+                <Controls title='Settings' />
                 <UI />
             </Controls.Provider>
         </>

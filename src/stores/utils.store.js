@@ -5,13 +5,13 @@ export const STApp = proxy({
     debugMode: false,
     debugModel: 'MDMuscle',
     debugUI: 'UIDebug',
-    sceneName: 'SCBox'
+    sceneName: 'SCGym'
 })
 
 
 export const STCharacter = proxy({
-    model: 'male_body',
-    gender: 'male',
+    model: 'female_body',
+    gender: 'female',
     anims: {
         idle: 'idle_04',
         rest: 'idle_01',
