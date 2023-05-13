@@ -10,8 +10,8 @@ export const STApp = proxy({
 
 
 export const STCharacter = proxy({
-    model: 'female_body',
-    gender: 'female',
+    model: 'male_body',
+    gender: 'male',
     anims: {
         idle: 'idle_04',
         rest: 'idle_01',
